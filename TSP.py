@@ -19,14 +19,13 @@ def tsp(D):
         if visited == VISITED_ALL:
             return_home_dist = D[last][start] or inf
             ans = min(ans, tmp_dist + return_home_dist)
-            path.pop()
+            path.append(last)
             # if ans > tmp_dist + return_home_dist :
             #     ans = tmp_dist + return_home_dist
             return
 
         for city in range(N):
             if visited & (1 << city) == 0 and D[last][city] != 0:
-                path.append(city)
                 find_path(start, city,path, visited | (1 << city), tmp_dist + D[last][city])
 
     for c in range(N):
