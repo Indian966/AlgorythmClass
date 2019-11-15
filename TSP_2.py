@@ -3,7 +3,6 @@ dist = [[0, 2, 9, INF],
         [1, 0, 6, 4],
         [INF, 7, 0, 8],
         [6, 3, INF, 0]]
-
 N = len(dist)
 VISITED_ALL = (1 << N)-1
 visited = 1 << 1
@@ -33,7 +32,6 @@ def tspFinder(path, visited, cost):
             ans = min(ans, temp_c)
             path.pop()
             visited = 1>>1
-
     return ans
 
 print(tspFinder(path, visited, cost))
