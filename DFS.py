@@ -16,7 +16,6 @@ def bfs(graph, start_node):
         if node not in visit:
             visit.append(node)
             queue.extend(graph[node])
-
     return visit
 
 def dfs(graph, start_node):
@@ -29,9 +28,10 @@ def dfs(graph, start_node):
         node = stack.pop()
         if node not in visit:
             visit.append(node)
-            stack.extend(graph[node])
-
+            temp = graph[node]
+            while temp:
+                stack.extend(temp.pop())
     return visit
 
-print(dfs(graph,'1'))
-print(bfs(graph,'1'))
+print("BFS :", bfs(graph,'1'))
+print("DFS :", dfs(graph,'1'))
