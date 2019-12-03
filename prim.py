@@ -1,7 +1,8 @@
 def prim(graph, root):
     assert type(graph) == dict
 
-    nodes = graph.keys()
+    # nodes = graph.keys()
+    nodes = list(graph)
     nodes.remove(root)
 
     visited = [root]
@@ -26,12 +27,12 @@ def prim(graph, root):
 
 
 if __name__ == '__main__':
-    graph_dict = {"s1": {"s1": 0, "s2": 2, "s10": 3, "s12": 4, "s5": 3},
-                  "s2": {"s1": 1, "s2": 0, "s10": 4, "s12": 2, "s5": 2},
-                  "s10": {"s1": 2, "s2": 6, "s10": 0, "s12": 3, "s5": 4},
-                  "s12": {"s1": 3, "s2": 5, "s10": 2, "s12": 0, "s5": 2},
-                  "s5": {"s1": 3, "s2": 5, "s10": 2, "s12": 4, "s5": 0},
+    graph_dict = {  "v1": {"v1": 0, "v2": 1, "v3": 3, "v4": 999, "v5": 999},
+                    "v2": {"v1": 1, "v2": 0, "v3": 3, "v4": 6, "v5": 999},
+                    "v3": {"v1": 3, "v2": 3, "v3": 0, "v4": 4, "v5": 2},
+                    "v4": {"v1": 999, "v2": 6, "v3": 4, "v4": 0, "v5": 5},
+                    "v5": {"v1": 999, "v2": 999, "v3": 2, "v4": 5, "v5": 0},
                   }
 
-    path = prim(graph_dict, 's12')
+    path = prim(graph_dict, 'v1')
     print(path)
