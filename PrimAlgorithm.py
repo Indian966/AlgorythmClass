@@ -27,3 +27,4 @@ def prim (graph) :
         nodes.remove(next)
     return path
 print(prim(graph_dict))
+# [('v1', 'v2'), ('v1', 'v3'), ('v3', 'v5'), ('v3', 'v4')]
