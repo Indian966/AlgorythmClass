@@ -7,6 +7,6 @@ install:
   - pip install --user -r requirements.txt
 
 script:
-  - python pipTest.py
+  - pytest pipTest.py
 
 os: windows
